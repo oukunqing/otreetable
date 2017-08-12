@@ -1,0 +1,508 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题页</title>
+	<meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<style type="text/css">
+	body{font-size:12px;}
+	table{border:solid 1px #ccc; border-collapse:collapse;}
+	table td,table th{border:solid 1px #ccc; line-height:22px; height:22px; padding:0 5px;}
+	</style>
+	<script type="text/javascript" src="otreetable.js"></script>
+</head>
+<body>
+树形表格示例：
+<a onclick="expandAll();">全部展开</a>
+<a onclick="collapseAll();">全部收缩</a>
+<br />
+<table id="tb1" style="float:left;">	
+	<tr>
+		<th>部门名称
+		</th>
+		<th>部门ID</th>
+		<th>部门编号</th>
+		<th>拼音码</th>
+	</tr>
+	<tr lang="{id:2,pid:1,level:1}">
+		<td>信阳供电段</td>
+		<td>2</td>
+		<td>0017420000</td>
+		<td>XYGDD</td>
+	</tr>
+	<tr lang="{id:3,pid:2,level:2}">
+		<td><a href="http://www.baidu.com" target="_blank">段领导班子</a></td>
+		<td>3</td>
+		<td>0017420900</td>
+		<td>DLDBZ</td>
+	</tr>
+	<tr lang="{id:4,pid:2,level:2}">
+		<td>党群办公室</td>
+		<td>4</td>
+		<td>0017421000</td>
+		<td>DQBGS</td>
+	</tr>
+	<tr lang="{id:1,pid:0,level:0}">
+		<td>武汉铁路局</td>
+		<td>1</td>
+		<td>01</td>
+		<td>WHTLJ</td>
+	</tr>
+	<tr lang="{id:5,pid:2,level:2}">
+		<td>行政办公室</td>
+		<td>5</td>
+		<td>0017421100</td>
+		<td>XZBGS</td>
+	</tr>
+	<tr lang="{id:6,pid:2,level:2}">
+		<td>计划财务科</td>
+		<td>6</td>
+		<td>0017421200</td>
+		<td>JHCWK</td>
+	</tr>
+	<tr lang="{id:7,pid:2,level:2}">
+		<td>劳动人事科</td>
+		<td>7</td>
+		<td>0017421300</td>
+		<td>LDRSK</td>
+	</tr>
+	<tr lang="{id:8,pid:2,level:2}">
+		<td>安全科</td>
+		<td>8</td>
+		<td>0017421400</td>
+		<td>AQK</td>
+	</tr>
+	<tr lang="{id:9,pid:2,level:2}">
+		<td>供电技术科</td>
+		<td>9</td>
+		<td>0017421500</td>
+		<td>GDJSK</td>
+	</tr>
+	<tr lang="{id:10,pid:2,level:2}">
+		<td>材料科</td>
+		<td>10</td>
+		<td>0017421700</td>
+		<td>CLK</td>
+	</tr>
+	<tr lang="{id:11,pid:2,level:2}">
+		<td>职工教育科</td>
+		<td>11</td>
+		<td>0017421600</td>
+		<td>ZGJYK</td>
+	</tr>
+	<tr lang="{id:12,pid:2,level:2}">
+		<td>计量室</td>
+		<td>12</td>
+		<td>0017421800</td>
+		<td>JLS</td>
+	</tr>
+	<tr lang="{id:13,pid:2,level:2}">
+		<td>质检科</td>
+		<td>13</td>
+		<td>0017422200</td>
+		<td>ZJK</td>
+	</tr>
+	<tr lang="{id:14,pid:2,level:2}">
+		<td>劳服</td>
+		<td>14</td>
+		<td>0017422300</td>
+		<td>LF</td>
+	</tr>
+	<tr lang="{id:15,pid:2,level:2}">
+		<td>平顶山东供电车间</td>
+		<td>15</td>
+		<td>0017420100</td>
+		<td>PDSDGDCJ</td>
+	</tr>
+	<tr lang="{id:16,pid:2,level:2}">
+		<td>漯河供电车间</td>
+		<td>16</td>
+		<td>0017420200</td>
+		<td>LHGDCJ</td>
+	</tr>
+	<tr lang="{id:17,pid:2,level:2}">
+		<td>驻马店供电车间</td>
+		<td>17</td>
+		<td>0017420300</td>
+		<td>ZMDGDCJ</td>
+	</tr>
+	<tr lang="{id:18,pid:2,level:2}">
+		<td>信阳供电车间</td>
+		<td>18</td>
+		<td>0017420500</td>
+		<td>XYGDCJ</td>
+	</tr>
+	<tr lang="{id:19,pid:2,level:2}">
+		<td>花园供电车间</td>
+		<td>19</td>
+		<td>0017420600</td>
+		<td>HYGDCJ</td>
+	</tr>
+	<tr lang="{id:20,pid:2,level:2}">
+		<td>潢川供电车间</td>
+		<td>20</td>
+		<td>0017420700</td>
+		<td>GCGDCJ</td>
+	</tr>
+	<tr lang="{id:21,pid:2,level:2}">
+		<td>信阳北供电车间</td>
+		<td>21</td>
+		<td>0017422100</td>
+		<td>XYBGDCJ</td>
+	</tr>
+	<tr lang="{id:22,pid:2,level:2}">
+		<td>驻马店西供电车间</td>
+		<td>22</td>
+		<td>0017420400</td>
+		<td>ZMDXGDCJ</td>
+	</tr>
+	<tr lang="{id:23,pid:2,level:2}">
+		<td>动力设备车间</td>
+		<td>23</td>
+		<td>0017421900</td>
+		<td>DLSBCJ</td>
+	</tr>
+	<tr lang="{id:24,pid:2,level:2}">
+		<td>大修车间</td>
+		<td>24</td>
+		<td>0017422000</td>
+		<td>DXCJ</td>
+	</tr>
+	<tr lang="{id:25,pid:2,level:2}">
+		<td>信阳检修车间</td>
+		<td>25</td>
+		<td>0017420800</td>
+		<td>XYJXCJ</td>
+	</tr>
+	<tr lang="{id:26,pid:2,level:2}">
+		<td>京广高铁销钉更换项目部</td>
+		<td>26</td>
+		<td>0017422400</td>
+		<td>JGGTXDGHXMB</td>
+	</tr>
+	<tr lang="{id:27,pid:2,level:2}">
+		<td>局驻段验收室</td>
+		<td>27</td>
+		<td>0017422500</td>
+		<td>JZDYSS</td>
+	</tr>
+	<tr lang="{id:28,pid:15,level:3}">
+		<td>裴城网工区</td>
+		<td>28</td>
+		<td>0017420102</td>
+		<td>PCWGQ</td>
+	</tr>
+	<tr lang="{id:29,pid:15,level:3}">
+		<td>平顶山东网工区</td>
+		<td>29</td>
+		<td>0017420101</td>
+		<td>PDSDWGQ</td>
+	</tr>
+	<tr lang="{id:30,pid:15,level:3}">
+		<td>姚孟工区</td>
+		<td>30</td>
+		<td>001742010101</td>
+		<td>YMGQ</td>
+	</tr>
+	<tr lang="{id:31,pid:15,level:3}">
+		<td>平东电力工班</td>
+		<td>31</td>
+		<td>0017420103</td>
+		<td>PDDLGB</td>
+	</tr>
+	<tr lang="{id:32,pid:16,level:3}">
+		<td>漯河网工区</td>
+		<td>32</td>
+		<td>0017420201</td>
+		<td>LHWGQ</td>
+	</tr>
+	<tr lang="{id:33,pid:16,level:3}">
+		<td>西平网工区</td>
+		<td>33</td>
+		<td>0017420202</td>
+		<td>XPWGQ</td>
+	</tr>
+	<tr lang="{id:34,pid:16,level:3}">
+		<td>漯河电力工班</td>
+		<td>34</td>
+		<td>0017420203</td>
+		<td>LHDLGB</td>
+	</tr>
+	<tr lang="{id:35,pid:16,level:3}">
+		<td>漯河抄收工班</td>
+		<td>35</td>
+		<td>0017420205</td>
+		<td>LHCSGB</td>
+	</tr>
+	<tr lang="{id:36,pid:17,level:3}">
+		<td>遂平网工区</td>
+		<td>36</td>
+		<td>0017420301</td>
+		<td>SPWGQ</td>
+	</tr>
+	<tr lang="{id:37,pid:17,level:3}">
+		<td>驻马店网工区</td>
+		<td>37</td>
+		<td>0017420302</td>
+		<td>ZMDWGQ</td>
+	</tr>
+	<tr lang="{id:38,pid:17,level:3}">
+		<td>确山网工区</td>
+		<td>38</td>
+		<td>0017420303</td>
+		<td>QSWGQ</td>
+	</tr>
+	<tr lang="{id:39,pid:17,level:3}">
+		<td>驻马店电力工班</td>
+		<td>39</td>
+		<td>0017420304</td>
+		<td>ZMDDLGB</td>
+	</tr>
+	<tr lang="{id:40,pid:18,level:3}">
+		<td>明港网工区</td>
+		<td>40</td>
+		<td>0017420501</td>
+		<td>MGWGQ</td>
+	</tr>
+	<tr lang="{id:41,pid:18,level:3}">
+		<td>信阳网工区</td>
+		<td>41</td>
+		<td>0017420502</td>
+		<td>XYWGQ</td>
+	</tr>
+	<tr lang="{id:42,pid:18,level:3}">
+		<td>鸡公山网工区</td>
+		<td>42</td>
+		<td>0017420503</td>
+		<td>JGSWGQ</td>
+	</tr>
+	<tr lang="{id:43,pid:18,level:3}">
+		<td>明港电力工班</td>
+		<td>43</td>
+		<td>0017420504</td>
+		<td>MGDLGB</td>
+	</tr>
+	<tr lang="{id:44,pid:18,level:3}">
+		<td>信阳电力工班</td>
+		<td>44</td>
+		<td>0017420505</td>
+		<td>XYDLGB</td>
+	</tr>
+	<tr lang="{id:45,pid:18,level:3}">
+		<td>信阳抄收工班</td>
+		<td>45</td>
+		<td>0017420508</td>
+		<td>XYCSGB</td>
+	</tr>
+	<tr lang="{id:46,pid:19,level:3}">
+		<td>广水网工区</td>
+		<td>46</td>
+		<td>0017420601</td>
+		<td>GSWGQ</td>
+	</tr>
+	<tr lang="{id:47,pid:19,level:3}">
+		<td>花园网工区</td>
+		<td>47</td>
+		<td>0017420603</td>
+		<td>HYWGQ</td>
+	</tr>
+	<tr lang="{id:48,pid:19,level:3}">
+		<td>广水西网工区</td>
+		<td>48</td>
+		<td>0017420602</td>
+		<td>GSXWGQ</td>
+	</tr>
+	<tr lang="{id:49,pid:19,level:3}">
+		<td>广水电力工班</td>
+		<td>49</td>
+		<td>0017420604</td>
+		<td>GSDLGB</td>
+	</tr>
+	<tr lang="{id:50,pid:20,level:3}">
+		<td>淮滨养护工班</td>
+		<td>50</td>
+		<td>0017420701</td>
+		<td>HBYHGB</td>
+	</tr>
+	<tr lang="{id:51,pid:20,level:3}">
+		<td>潢川检修工班</td>
+		<td>51</td>
+		<td>0017420702</td>
+		<td>GCJXGB</td>
+	</tr>
+	<tr lang="{id:52,pid:20,level:3}">
+		<td>新县检修工班</td>
+		<td>52</td>
+		<td>0017420703</td>
+		<td>XXJXGB</td>
+	</tr>
+	<tr lang="{id:53,pid:20,level:3}">
+		<td>商城电力工班</td>
+		<td>53</td>
+		<td>0017420707</td>
+		<td>SCDLGB</td>
+	</tr>
+	<tr lang="{id:54,pid:21,level:3}">
+		<td>罗山电力工班</td>
+		<td>54</td>
+		<td>0017422101</td>
+		<td>LSDLGB</td>
+	</tr>
+	<tr lang="{id:55,pid:21,level:3}">
+		<td>信北电力工班</td>
+		<td>55</td>
+		<td>0017422102</td>
+		<td>XBDLGB</td>
+	</tr>
+	<tr lang="{id:56,pid:21,level:3}">
+		<td>小林电力工班</td>
+		<td>56</td>
+		<td>0017422103</td>
+		<td>XLDLGB</td>
+	</tr>
+	<tr lang="{id:57,pid:22,level:3}">
+		<td>漯河西检修工班</td>
+		<td>57</td>
+		<td>0017420401</td>
+		<td>LHXJXGB</td>
+	</tr>
+	<tr lang="{id:58,pid:22,level:3}">
+		<td>驻马店西检修工班</td>
+		<td>58</td>
+		<td>0017420402</td>
+		<td>ZMDXJXGB</td>
+	</tr>
+	<tr lang="{id:59,pid:22,level:3}">
+		<td>信阳东检修工班</td>
+		<td>59</td>
+		<td>0017420403</td>
+		<td>XYDJXGB</td>
+	</tr>
+	<tr lang="{id:60,pid:22,level:3}">
+		<td>孝感北检修工班</td>
+		<td>60</td>
+		<td>0017420405</td>
+		<td>XGBJXGB</td>
+	</tr>
+	<tr lang="{id:61,pid:22,level:3}">
+		<td>路局座台</td>
+		<td>61</td>
+		<td>0017420411</td>
+		<td>LJZT</td>
+	</tr>
+	<tr lang="{id:62,pid:23,level:3}">
+		<td>汽车班</td>
+		<td>62</td>
+		<td>0017421901</td>
+		<td>QCB</td>
+	</tr>
+	<tr lang="{id:63,pid:23,level:3}">
+		<td>信阳内燃工班</td>
+		<td>63</td>
+		<td>0017421902</td>
+		<td>XYNRGB</td>
+	</tr>
+	<tr lang="{id:64,pid:23,level:3}">
+		<td>运记检测工班</td>
+		<td>64</td>
+		<td>0017421903</td>
+		<td>YJJCGB</td>
+	</tr>
+	<tr lang="{id:65,pid:23,level:3}">
+		<td>运记揭示管理工班</td>
+		<td>65</td>
+		<td>0017421904</td>
+		<td>YJJSGLGB</td>
+	</tr>
+	<tr lang="{id:66,pid:24,level:3}">
+		<td>大修一工班</td>
+		<td>66</td>
+		<td>0017422001</td>
+		<td>DXYGB</td>
+	</tr>
+	<tr lang="{id:67,pid:25,level:3}">
+		<td>信阳变电检修工班</td>
+		<td>67</td>
+		<td>0017420801</td>
+		<td>XYBDJXGB</td>
+	</tr>
+	<tr lang="{id:68,pid:25,level:3}">
+		<td>信阳配电检修工班</td>
+		<td>68</td>
+		<td>0017420802</td>
+		<td>XYPDJXGB</td>
+	</tr>
+	<tr lang="{id:69,pid:25,level:3}">
+		<td>信阳远动工班</td>
+		<td>69</td>
+		<td>0017420803</td>
+		<td>XYYDGB</td>
+	</tr>
+	<tr lang="{id:70,pid:15,level:3}">
+		<td>丁营变电工班</td>
+		<td>70</td>
+		<td>0017420104</td>
+		<td>DYBDGB</td>
+	</tr>
+	<tr lang="{id:71,pid:16,level:3}">
+		<td>漯河变电工班</td>
+		<td>71</td>
+		<td>0017420204</td>
+		<td>LHBDGB</td>
+	</tr>
+	<tr lang="{id:72,pid:17,level:3}">
+		<td>遂平变电工班</td>
+		<td>72</td>
+		<td>0017420305</td>
+		<td>SPBDGB</td>
+	</tr>
+	<tr lang="{id:73,pid:18,level:3}">
+		<td>李家寨变电工班</td>
+		<td>73</td>
+		<td>0017420507</td>
+		<td>LJZBDGB</td>
+	</tr>
+	<tr lang="{id:74,pid:19,level:3}">
+		<td>广水变电工班</td>
+		<td>74</td>
+		<td>0017420605</td>
+		<td>GSBDGB</td>
+	</tr>
+	<tr lang="{id:75,pid:19,level:3}">
+		<td>花园变电工班</td>
+		<td>75</td>
+		<td>0017420606</td>
+		<td>HYBDGB</td>
+	</tr>
+	<tr lang="{id:76,pid:20,level:3}">
+		<td>潢川变配电工班</td>
+		<td>76</td>
+		<td>0017420708</td>
+		<td>GCBPD</td>
+	</tr>
+	<tr lang="{id:77,pid:22,level:3}">
+		<td>驻马店西变配电工班</td>
+		<td>77</td>
+		<td>0017420404</td>
+		<td>ZMDXBPDGB</td>
+	</tr>
+	<tr lang="{id:78,pid:18,level:3}">
+		<td>明港变电工班</td>
+		<td>78</td>
+		<td>0017420506</td>
+		<td>MGBDGB</td>
+	</tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+var otb = new oTreeTable('otb', document.getElementById('tb1'), {skin:'default',showIcon:false});
+
+function expandAll(){
+	otb.expandAll();
+}
+function collapseAll(){
+	otb.collapseAll();
+}
+</script>

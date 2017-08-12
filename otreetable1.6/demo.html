@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题页</title>
+	<meta name="description" content="" />
+    <meta name="keywords" content="" />
+	<style type="text/css">
+	body{font-size:12px;}
+	a{cursor:pointer; text-decoration:underline;}
+	table{border:solid 1px #ccc; border-collapse:collapse;}
+	table td,table th{border:solid 1px #ccc; line-height:24px; height:24px; padding:0 10px; text-align:center;}
+	.red{color:#f00;}
+	</style>
+	<script type="text/javascript">
+		//填充表格内容
+		var fillTable = function(row, rowdata) {
+			for (var i in rowdata) {
+				var cell = row.insertCell(i);
+				cell.innerHTML = rowdata[i].html;
+				cell.title = rowdata[i].title != undefined ? rowdata[i].title: '';
+				cell.lang = rowdata[i].lang != undefined ? rowdata[i].lang: '';
+				cell.className = rowdata[i].css != undefined ? rowdata[i].css: '';
+				var style = rowdata[i].style;
+				if (style != undefined && typeof(style) == 'object') {
+					for (var j = 0,
+					c = style.length; j < c; j++) {
+						cell.style[style[j][0]] = style[j][1];
+					}
+				}
+				if (rowdata[i].action != undefined && rowdata[i].action.func != undefined) {
+					var func = rowdata[i].action.func;
+					var param = rowdata[i].action.param;
+					if (typeof func == 'string') {
+						func = eval(func);
+					}
+					if (param != undefined) {
+						cell.onclick = function(param) {
+							func(param);
+						}
+					} else {
+						cell.onclick = function() {
+							func();
+						}
+					}
+				}
+			}
+			rowdata = null;
+			
+			return true;
+		};
+	</script>
+	<script type="text/javascript" src="otreetable.js"></script>
+</head>
+<body>
+<div style="line-height:24px;padding:5px 0;">
+	树形表格示例<br />
+	你现在看到的是原始的表格内容显示，请点击下面的“调用树形菜单”按钮就可以看到效果了。
+	<br />
+	<input type="button" onclick="test();" value="调用树形菜单" style="margin-right:20px;" />
+	<input type="button" onclick="expandAll();" value="全部展开" />
+	<input type="button" onclick="collapseAll();" value="全部收缩" />
+	层级：<input type="text" id="txtLevel" style="width:40px;" />
+	<input type="button" onclick="expandLevel();" value="按层级展开" />
+	ID:<input type="text" id="txtId" style="width:40px;" />
+	<input type="button" onclick="expand();" value="按ID展开" />
+</div>
+<table id="tb1" style="float:left;">	
+	<tr style="background:#f1f1f1;">
+		<th>名称
+		</th>
+		<th>ID</th>
+		<th>父级ID</th>
+		<th>层级</th>
+		<th>编号</th>
+		<th>说明</th>
+	</tr>
+	<tr lang="{id:2,pid:1,level:0}" onclick="alert(this.id);alert(this.data);alert(this.data.id);">
+		<td>C#.NET开发</td>
+		<td style="color:#f00;">2</td>
+		<td class="red">1</td>
+		<td>1</td>
+		<td>c#</td>
+		<td></td>
+	</tr>
+	<tr lang="{id:1,pid:0,level:0}" ondblclick="alert('dblclick');">
+		<td>软件开发</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td></td>
+		<td>本表格中的内容仅仅是示例，不代表任何言论观点，请勿对号入座</td>
+	</tr>
+	<tr lang="{id:3,pid:1,level:1}">
+		<td>ASP.NET开发</td>
+		<td>3</td>
+		<td>1</td>
+		<td>1</td>
+		<td>asp.net</td>
+		<td></td>
+	</tr>
+	<tr lang="{id:4,pid:3,level:2}">
+		<td>ASP.NET控件开发</td>
+		<td>4</td>
+		<td>3</td>
+		<td>2</td>
+		<td>asp.net control</td>
+		<td>ASP.NET控件开发的说明</td>
+	</tr>
+	<tr lang="{id:5,pid:1,level:1}">
+		<td>JAVASCRIPT开发</td>
+		<td>5</td>
+		<td>1</td>
+		<td>1</td>
+		<td>javascript</td>
+		<td></td>
+	</tr>
+	<tr lang="{id:6,pid:0,level:0}">
+		<td>音乐</td>
+		<td>6</td>
+		<td>0</td>
+		<td>0</td>
+		<td>music</td>
+		<td>音乐使人快乐</td>
+	</tr>
+	<tr lang="{id:24,pid:7,level:3}">
+		<td>原生JAVASCRIPT插件开发</td>
+		<td>24</td>
+		<td>7</td>
+		<td>3</td>
+		<td>javascript</td>
+		<td></td>
+	</tr>
+	<tr lang="{id:7,pid:5,level:2}">
+		<td>JAVASCRIPT插件开发</td>
+		<td>7</td>
+		<td>5</td>
+		<td>2</td>
+		<td>javascript</td>
+		<td></td>
+	</tr>
+	<tr lang="{id:25,pid:7,level:3}">
+		<td>JQUERY插件开发</td>
+		<td>25</td>
+		<td>7</td>
+		<td>3</td>
+		<td>jquery</td>
+		<td></td>
+	</tr>
+	<tr lang="{id:20,pid:0,level:0}">
+		<td>运动</td>
+		<td>20</td>
+		<td>0</td>
+		<td>0</td>
+		<td>sport</td>
+		<td>生命在于运动</td>
+	</tr>
+	<tr lang="{id:8,pid:6,level:1}">
+		<td>轻音乐</td>
+		<td>8</td>
+		<td>6</td>
+		<td>1</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:21,pid:20,level:1}">
+		<td>乒乓球</td>
+		<td>21</td>
+		<td>20</td>
+		<td>1</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:13,pid:9,level:2}">
+		<td>竹笛</td>
+		<td>13</td>
+		<td>9</td>
+		<td>2</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:9,pid:6,level:1}">
+		<td>民乐</td>
+		<td>9</td>
+		<td>6</td>
+		<td>1</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:14,pid:9,level:2}">
+		<td>二胡</td>
+		<td>14</td>
+		<td>9</td>
+		<td>2</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:22,pid:20,level:1}">
+		<td>羽毛球</td>
+		<td>22</td>
+		<td>20</td>
+		<td>1</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:23,pid:20,level:1}">
+		<td>足球</td>
+		<td>23</td>
+		<td>20</td>
+		<td>1</td>
+		<td></td>
+		<td>曾经很喜欢踢足球，后来就再没有踢过了</td>
+	</tr>
+	<tr lang="{id:10,pid:8,level:2}">
+		<td>钢琴曲</td>
+		<td>10</td>
+		<td>8</td>
+		<td>2</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:11,pid:10,level:3}">
+		<td>钢琴独奏</td>
+		<td>11</td>
+		<td>10</td>
+		<td>3</td>
+		<td></td>
+		<td></td>
+	</tr>
+	<tr lang="{id:12,pid:10,level:3}">
+		<td>钢琴合奏</td>
+		<td>12</td>
+		<td>10</td>
+		<td>3</td>
+		<td></td>
+		<td></td>
+	</tr>
+</table>
+</body>
+</html>
+<script type="text/javascript">
+var otb = null;
+var isLoaded = false;
+
+function test(){
+	if(!isLoaded){
+		otb = new oTreeTable('otb', document.getElementById('tb1'), 
+			//{skin:'default',showIcon:true,cellIndex:0,rowNumber:{setRowNumber:true,cellIndex:1,rowIndex:1}}
+			{skin:'default',showIcon:true,cellIndex:0,isCache:true,openLevel:0}
+		);
+		isLoaded = true;
+	}
+}
+
+function test1(){
+}
+
+function expandAll(){
+	if(isLoaded){
+		otb.expandAll();
+	}
+}
+function collapseAll(){
+	if(isLoaded){
+		otb.collapseAll();
+	}
+}
+
+function expandLevel(){
+	var level = parseInt(document.getElementById('txtLevel').value, 10);
+	if(isLoaded){
+		otb.expandLevel(isNaN(level) ? -1 : level);
+	}
+}
+
+function expand(){
+	var id = parseInt(document.getElementById('txtId').value, 10);
+	if(isLoaded){
+		otb.expand(id, id);
+	}
+}
+</script>
